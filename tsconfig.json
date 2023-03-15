@@ -1,0 +1,24 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["es2016", "dom"],
+    "strict": true,
+    "rootDir": ".",
+    "outDir": "./dist",
+    "target": "ES6",
+    "declaration": false,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true
+  },
+  "files": ["src/main.ts"],
+  "include": ["src/**/*.d.ts"],
+  "exclude": ["node_modules", "src/**/*.test.ts", "src/**/*.spec.ts"]
+}

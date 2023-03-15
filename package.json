@@ -1,0 +1,35 @@
+{
+  "name": "espruino-test",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "ts-node scripts/build.script",
+    "serve": "ts-node scripts/serve.script",
+    "auto-load": "ts-node scripts/auto-load.script",
+    "format": "prettier --write .",
+    "lint": "eslint *.ts"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "espruino": "^0.0.17"
+  },
+  "devDependencies": {
+    "@types/espruino": "^1.94.7",
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "esbuild": "^0.17.11",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-ban": "^1.5.2",
+    "eslint-plugin-deprecation": "^1.2.1",
+    "eslint-plugin-editorconfig": "^3.2.0",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-jsdoc": "latest",
+    "eslint-plugin-prefer-arrow": "latest",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  }
+}
