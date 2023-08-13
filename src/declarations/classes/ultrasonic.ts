@@ -27,10 +27,6 @@ export class Ultrasonic {
   private timeoutId: NodeJS.Timeout | undefined;
   private fallWatchId: string | undefined;
 
-  private get isBusy(): boolean {
-    return this.timeoutId !== undefined;
-  }
-
   constructor({ trigPin, echoPin }: UltrasonicConfig) {
     this.trigPin = trigPin;
     this.echoPin = echoPin;
@@ -40,7 +36,7 @@ export class Ultrasonic {
   }
 
   public ping(unit: Unit): Promise<number> {
-    if (this.isBusy) {
+    if (this.isBusy()) {
       return Promise.reject(new Error('[Ultrasonic] sensor is busy'));
     }
 
@@ -53,6 +49,10 @@ export class Ultrasonic {
         digitalPulse(this.trigPin, true, 0.01);
       }
     );
+  }
+
+  private isBusy(): boolean {
+    return this.timeoutId !== undefined;
   }
 
   private getDistance(unit: Unit): Promise<number> {

@@ -14,7 +14,7 @@ const build = async (): Promise<void> => {
   await esbuild.build(buildConfig);
 };
 
-const postProcessBundle = (): Promise<void> =>
+const load = (): Promise<void> =>
   new Promise((resolve: () => void, reject: () => void) => {
     if (!fs.existsSync(outputFilePath)) {
       reject();
@@ -25,8 +25,12 @@ const postProcessBundle = (): Promise<void> =>
       [
         '--board',
         appConfig.boardName,
-        appConfig.outputFileName,
+        '-b',
+        appConfig.portSpeed.toString(),
+        '--port',
+        appConfig.port,
         '-o',
+        appConfig.outputFileName,
         appConfig.outputFileName,
       ],
       { cwd: appConfig.outputDir }
@@ -37,5 +41,5 @@ const postProcessBundle = (): Promise<void> =>
 
 (async () => {
   await build();
-  await postProcessBundle();
+  await load();
 })();

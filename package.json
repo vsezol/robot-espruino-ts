@@ -2,7 +2,9 @@
   "name": "espruino-test",
   "version": "1.0.0",
   "main": "dist/main.js",
+  "source": "src/main.ts",
   "scripts": {
+    "load": "ts-node scripts/load.script",
     "build": "ts-node scripts/build.script",
     "serve": "ts-node scripts/serve.script",
     "auto-load": "ts-node scripts/auto-load.script",
@@ -11,13 +13,17 @@
   },
   "license": "ISC",
   "dependencies": {
-    "espruino": "^0.0.17"
+    "core-js": "^3.29.1",
+    "espruino": "^0.1.45",
+    "ts-polyfill": "^3.8.2"
   },
   "devDependencies": {
+    "@swc/helpers": "^0.4.14",
     "@types/espruino": "^1.94.7",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
     "esbuild": "^0.17.11",
+    "esbuild-plugin-es5": "^1.2.0",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-ban": "^1.5.2",
